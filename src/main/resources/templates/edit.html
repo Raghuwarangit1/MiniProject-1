@@ -1,0 +1,76 @@
+<html  xmlns:th="https://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  </head>
+  <body>
+    <h1 style="color:red ;text-align:center" >WELCOME TO USERACCOUNTS</h1>
+  
+  <div class="container mt-fluid"><nav class="navbar navbar-expand-lg bg-body-tertiary">
+  
+  <div class="container-fluid">
+  
+   
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="allusers">AllUsers</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="contact">ConactInfo</a>
+        </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<form  th:action="@{/updateuser}" method="POST" th:object="${editresult}">
+<table>
+<tr>
+<th>USER-ID:</th>
+<td><input type="text" th:field="*{id}" readonly="readonly" /></td>
+</tr>
+<tr>
+<th>USER NAME:</th>
+<td><input type="text" th:field="*{name}" /></td>
+</tr>
+<tr>
+<th>USER MAIL-ID:</th>
+<td><input type="email" th:field="*{email}" /></td>
+</tr>
+<tr>
+<th>USER PHON-NUMBER</th>
+<td><input type="number" th:field="*{phNo}" /></td>
+</tr>
+<tr>
+<th> GENDER</th>
+<td><input type="radio" th:field="*{gender}" value="MALE" />MALE</td>
+<td><input type="radio" th:field="*{gender}" value="MALE" />FEMALE</td>
+<td><input type="radio" th:field="*{gender}" value="FEMALE" />OTHERS</td>
+</tr>
+<tr>
+<th>USER :DATE OF BIRTH</th>
+<td><input type="date" th:field="*{dob}" /></td>
+</tr>
+<tr>
+<td><input type="submit" value="SUBMIT" class="btn btn-primary" />
+<input type="reset" value="RESET" class="btn btn-danger"  />
+</td>
+</tr>
+
+</table>
+
+</form>
+  </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+  </body>
+</html>
